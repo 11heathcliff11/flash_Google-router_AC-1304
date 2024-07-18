@@ -14,6 +14,12 @@ Before you start:
 * Powered the hub via a powerbank, any powerbank will suffice
 * Any other USB hub or dock will work as long it connects via USB C and has power
 * Ensure the hub or dock has power because the Google Wifi router AC-1304 only has one USB C port for both power and data
+* To reboot, unplug power, wait for 15 seconds, replug power, it takes few minutes for router to restart so be patient
+* For more info, visit: https://openwrt.org/toh/google/wifi
+* OEM stock firmware image & OpenWRT image are available under "Installation" heading at: https://openwrt.org/toh/google/wifi
+* You will require "OEM Firmware" image to restore stock firmware
+* You will also require "Factory image" to flash OpenWRT image
+* It is best practice to restore stock firmware first lest you run into any issues
 
 
 ******
@@ -21,11 +27,11 @@ Part I: Restoring Stock Firmware
 ******
 * Download the stock firmware recovery image from Google.
 * Create a USB recovery drive using the OnHub Recovery Utility tool.
-* Follow these steps to enter recovery mode:
+#### Follow these steps to enter recovery mode:
 * Hold the Reset button on the front of the case
-* Connect power to the device
+* Connect power to the device via a powered USB hub
 * After around 16 seconds, the LED will blink orange. Release the Reset button.
-* Plug in the USB drive containing the recovery image
+* Plug in the USB drive containing the stock firmware recovery image
 * The LED will turn off, and recovery will begin
 * Wait around 5-6 minutes for the device to automatically reboot. The LED will pulse blue when recovery is complete.
 
@@ -50,7 +56,7 @@ Part II: Flashing OpenWrt
 ******
 Part III: Installing OpenWrt to Internal Storage
 ******
-* Connect LAN cable from PC to router via ethrnet port
+* Connect ethernet cable from PC to router 
 #### Transfer the OpenWrt factory image to the router's temporary storage:
 * SSH into the router: ssh root@192.168.1.1
 * On Windows: pscp openwrt-image.bin root@192.168.1.1:/tmp/
