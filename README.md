@@ -64,7 +64,6 @@ Part III: Installing OpenWrt to Internal Storage
 #### Write the image to internal storage:
 * dd if=/dev/zero bs=512 seek=7634911 of=/dev/mmcblk0 count=33
 * dd if=/tmp/openwrt-image.bin of=/dev/mmcblk0
-
 * Reboot the device, and it should now be running OpenWrt from internal storage.
 * Access the OpenWrt web interface at https://192.168.1.1
 
