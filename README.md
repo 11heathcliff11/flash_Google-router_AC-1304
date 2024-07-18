@@ -6,11 +6,14 @@ Here are the steps to flash a new ROM on the Google Wifi router AC-1304
 You should know:
 * Flashing OpenWRT image
 * Router IP address may vary
-* SW7 button highlighted in attached image
+* SW7 button highlighted in attached image: opened_AC-1304.jpg
+* SW7 button is the developer mode button
+* After Part I, locate the single screw at the base plate, unscrew and gently pry and remove the base plate
 ******
 
 
 Part I: Restoring Stock Firmware
+******
 Download the stock firmware recovery image from Google.
 Create a USB recovery drive using the OnHub Recovery Utility tool.
 Follow these steps to enter recovery mode:
@@ -23,6 +26,7 @@ Wait around 5-6 minutes for the device to automatically reboot. The LED will pul
 
 
 Part II: Flashing OpenWrt
+***
 Download the OpenWrt factory image for your Google Wifi model.
 Flash the factory image to a USB drive:
 On Windows: Use dd to write the image, e.g., sudo dd if=openwrt-image.bin of=/dev/sdX bs=1M
@@ -39,6 +43,7 @@ Wait 30 seconds and check if it worked by pinging 192.168.1.1 from a LAN port.
 
 
 Part III: Installing OpenWrt to Internal Storage
+***
 Transfer the OpenWrt factory image to the router's temporary storage:
 On Windows: pscp openwrt-image.bin root@192.168.1.1:/tmp/
 On Linux/macOS: scp openwrt-image.bin root@192.168.1.1:/tmp/
